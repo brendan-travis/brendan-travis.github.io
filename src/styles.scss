@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+// 1. Configuration and helpers
+@import
+  'styles/1-abstracts/variables';
+
+// 2. Vendors
+
+// 3. Base stuff
+@import
+  'styles/3-base/base-overrides',
+  'styles/3-base/shadows';
+
+// 4. Layout-related sections
+@import
+  'styles/4-layout/spacing',
+  'styles/4-layout/margins';
+
+// 5. Components
+@import
+  'styles/5-components/buttons',
+  'styles/5-components/hero';
+
+// 6. Page-specific styles
+
+// 7. Themes
