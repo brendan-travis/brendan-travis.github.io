@@ -1,30 +1,38 @@
-<mat-toolbar color='primary' class='drop-shadow' style='z-index: 2;'>
-  <button mat-button routerLink="/" routerLinkActive="active">
-      <mat-icon svgIcon='b'></mat-icon>
-      brendan-travis.github.io
+<mat-toolbar color='primary' class='drop-shadow is-flex is-flex-wrap-wrap height-unset p-2'>
+
+  <button mat-button routerLink='/' routerLinkActive='active'>
+    <mat-icon svgIcon='b'></mat-icon>
+    brendan-travis.github.io
   </button>
 
-  <button mat-button routerLink="/blog" routerLinkActive="active">
+  <div class='is-flex-grow-1 is-flex is-flex-wrap-wrap'>
+    <button mat-button routerLink='/blog' routerLinkActive='active'>
       Blog
-  </button>
+    </button>
 
-  <button mat-button routerLink="/projects" routerLinkActive="active">
+    <button mat-button routerLink='/projects' routerLinkActive='active'>
       Projects
-  </button>
-
-  <span class='spacer'></span>
-
-  <a href='https://www.linkedin.com/in/brendan-travis-029b89166/'>
-    <button mat-button >
-      <mat-icon svgIcon='linkedin'></mat-icon>
-      LinkedIn
     </button>
-  </a>
 
-  <a href='https://github.com/brendan-travis'>
-    <button mat-button >
-      <mat-icon svgIcon='github'></mat-icon>
-      GitHub
-    </button>
-  </a>
+    <div class='ml-auto'>
+      <a href='https://www.linkedin.com/in/brendan-travis-029b89166/'>
+        <button mat-button>
+          <mat-icon svgIcon='linkedin'></mat-icon>
+          <div class='is-hidden is-flex-desktop'>
+            LinkedIn
+          </div>
+        </button>
+      </a>
+
+      <a href='https://github.com/brendan-travis'>
+        <button mat-button>
+          <mat-icon svgIcon='github'></mat-icon>
+          <div class='is-hidden is-flex-desktop'>
+            GitHub
+          </div>
+        </button>
+      </a>
+    </div>
+  </div>
+
 </mat-toolbar>

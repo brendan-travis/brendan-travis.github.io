@@ -5,6 +5,8 @@
   'styles/1-abstracts/variables';
 
 // 2. Vendors
+@import
+  'styles/2-vendors/bulma';
 
 // 3. Base stuff
 @import
@@ -13,7 +15,7 @@
 
 // 4. Layout-related sections
 @import
-  'styles/4-layout/spacing',
+  'styles/4-layout/height',
   'styles/4-layout/margins';
 
 // 5. Components
