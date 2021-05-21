@@ -23,8 +23,11 @@
   'styles/5-components/buttons',
   'styles/5-components/hero',
   'styles/5-components/navbar',
-  'styles/5-components/sidenav';
+  'styles/5-components/sidenav',
+  'styles/5-components/scroll-to-top';
 
 // 6. Page-specific styles
+@import
+  'styles/6-pages/projects';
 
 // 7. Themes

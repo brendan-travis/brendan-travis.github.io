@@ -1,4 +1,7 @@
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
   color: inherit;
 }
@@ -10,4 +13,21 @@ hr {
 
 body {
   height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(13deg, $colour-primary 14%, $colour-secondary 64%);
+  // border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, $colour-primary 14%, $colour-secondary 64%);
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  // border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
 }

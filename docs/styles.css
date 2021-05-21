@@ -1753,7 +1753,10 @@ table th {
     transform: rotate(359deg);
   }
 }
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
   color: inherit;
 }
@@ -1763,6 +1766,20 @@ hr {
 }
 body {
   height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(13deg, #480032 14%, #005792 64%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #480032 14%, #005792 64%);
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
 }
 .height-unset {
   height: unset;
@@ -1838,6 +1855,23 @@ button mat-icon {
   padding-bottom: 8px;
   border-radius: 0;
   text-align: left;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}
+.project-container {
+  background-color: whitesmoke;
+  text-align: center;
+}
+.project-container hr {
+  width: 200px;
+  max-width: 200px;
+}
+.project-container .image {
+  width: 600px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.55);
 }
 
 /*# sourceMappingURL=styles.css.map*/
