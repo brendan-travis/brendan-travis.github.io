@@ -2,3 +2,12 @@ a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
 }
+
+hr {
+  background-color: $grey-light;
+  height: 1px;
+}
+
+body {
+  height: 100vh;
+}

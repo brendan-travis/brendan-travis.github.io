@@ -1,0 +1,10 @@
+.navbar {
+  background: linear-gradient(90deg, $colour-primary, $colour-secondary);
+  color: white;
+}
+
+.sub-navbar {
+  background: linear-gradient(90deg, $colour-primary, $colour-secondary);
+  color: white;
+  z-index: 3;
+}

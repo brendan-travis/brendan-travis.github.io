@@ -8,22 +8,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProjectsSideNavComponent } from './components/projects-side-nav/projects-side-nav.component';
+import { GithubIoComponent } from './pages/projects/github-io/github-io.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     BlogComponent,
-    ProjectsComponent,
     HomeComponent,
     HeroComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectsSideNavComponent,
+    GithubIoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

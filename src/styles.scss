@@ -8,20 +8,22 @@
 @import
   'styles/2-vendors/bulma';
 
-// 3. Base stuff
+// 3. Base
 @import
-  'styles/3-base/base-overrides',
-  'styles/3-base/shadows';
+  'styles/3-base/base-overrides';
 
-// 4. Layout-related sections
+// 4. Layout-related
 @import
   'styles/4-layout/height',
-  'styles/4-layout/margins';
+  'styles/4-layout/margins',
+  'styles/4-layout/padding';
 
 // 5. Components
 @import
   'styles/5-components/buttons',
-  'styles/5-components/hero';
+  'styles/5-components/hero',
+  'styles/5-components/navbar',
+  'styles/5-components/sidenav';
 
 // 6. Page-specific styles
 
