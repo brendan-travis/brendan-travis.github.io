@@ -73,8 +73,7 @@ This will render a markdown file from the specific file path in the `[src]` attr
 ## Add the activated route subscription
 
 To use the routing to choose which blog to display, we are going to make use
-of the activated route and subscription classes from the Angular router and RXJS
-respectively.
+of the activated route from the Angular router.
 
 In the `ngOnInit` method, we subscribe to the route, passing the route parameters into
 the `post` property on the component. We wrap this with the necessary file path so
@@ -84,35 +83,24 @@ would point to `./assets/blog/my-first-blog.md`.
 <p class='pre-filepath'>./src/app/blog-view/blog-view.component.ts</p>
 
 ```
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-blog-post-view',
-  templateUrl: './blog-post-view.component.html'
+  selector: 'app-blog-view',
+  templateUrl: './blog-view.component.html'
 })
-export class BlogPostViewComponent implements OnInit, OnDestroy {
-
-  private sub: Subscription | undefined;
-
+export class BlogViewComponent implements OnInit {
   post: string | undefined;
 
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.post = './assets/blog/' +  params['blog-name'] + '.md';
+    this.route.params.subscribe(params => {
+      this.post = `./assets/blog/${params['blog-name']}.md`;
     });
   }
-
-  ngOnDestroy() {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
-  }
-
 }
 ```
 

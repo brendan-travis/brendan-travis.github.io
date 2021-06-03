@@ -262,14 +262,9 @@ class BlogPostViewComponent {
         this.route = route;
     }
     ngOnInit() {
-        this.sub = this.route.params.subscribe(params => {
-            this.post = './assets/blog/' + params['blog-name'] + '.md';
+        this.route.params.subscribe(params => {
+            this.post = `./assets/blog/${params['blog-name']}.md`;
         });
-    }
-    ngOnDestroy() {
-        if (this.sub) {
-            this.sub.unsubscribe();
-        }
     }
 }
 BlogPostViewComponent.ɵfac = function BlogPostViewComponent_Factory(t) { return new (t || BlogPostViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.ActivatedRoute)); };
