@@ -253,21 +253,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var ngx_markdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-markdown */ 6715);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
+/* harmony import */ var ngx_markdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-markdown */ 6715);
 
 
 
+
+const blogs = [
+    {
+        id: 'adding-a-markdown-blog-to-an-angular-site-using-ngx-markdown',
+        title: 'Adding a Markdown Blog to an Angular Site using NGX Markdown',
+        description: 'Blogs are great! Having to create new Angular components every time you want to post is not. Let me show you a way of using markdown to quickly add a blog to your Angular project.',
+        date: new Date('2021-06-03'),
+        author: 'Brendan Travis',
+        image: 'assets/images/blog/adding-a-markdown-blog-to-an-angular-site-using-ngx-markdown_700x394.jpg'
+    }
+];
 class BlogPostViewComponent {
-    constructor(route) {
+    constructor(route, title, meta) {
+        var _a, _b, _c, _d, _e, _f;
         this.route = route;
+        this.title = title;
+        this.meta = meta;
+        this.originalTitle = title.getTitle();
+        this.originalTitleTag = (_b = (_a = meta.getTag('property="og:title"')) === null || _a === void 0 ? void 0 : _a.content) !== null && _b !== void 0 ? _b : '';
+        this.originalDescription = (_d = (_c = meta.getTag('property="og:description"')) === null || _c === void 0 ? void 0 : _c.content) !== null && _d !== void 0 ? _d : '';
+        this.originalImage = (_f = (_e = meta.getTag('property="og:image"')) === null || _e === void 0 ? void 0 : _e.content) !== null && _f !== void 0 ? _f : '';
     }
     ngOnInit() {
         this.route.params.subscribe(params => {
-            this.post = `./assets/blog/${params['blog-name']}.md`;
+            var _a, _b, _c, _d;
+            const blogName = params['blog-name'];
+            const blog = blogs.find(x => x.id === blogName);
+            this.post = `./assets/blog/${blogName}.md`;
+            this.title.setTitle((_a = blog === null || blog === void 0 ? void 0 : blog.title) !== null && _a !== void 0 ? _a : this.originalTitle);
+            this.meta.updateTag({ property: 'og:title', content: (_b = blog === null || blog === void 0 ? void 0 : blog.title) !== null && _b !== void 0 ? _b : this.originalTitle });
+            this.meta.updateTag({ property: 'og:description', content: (_c = blog === null || blog === void 0 ? void 0 : blog.description) !== null && _c !== void 0 ? _c : this.originalDescription });
+            this.meta.updateTag({ property: 'og:image', content: (_d = blog === null || blog === void 0 ? void 0 : blog.image) !== null && _d !== void 0 ? _d : this.originalImage });
         });
     }
+    ngOnDestroy() {
+        this.title.setTitle(this.originalTitle);
+        this.meta.updateTag({ property: 'og:title', content: this.originalTitleTag });
+        this.meta.updateTag({ property: 'og:description', content: this.originalDescription });
+        this.meta.updateTag({ property: 'og:image', content: this.originalImage });
+    }
 }
-BlogPostViewComponent.ɵfac = function BlogPostViewComponent_Factory(t) { return new (t || BlogPostViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.ActivatedRoute)); };
+BlogPostViewComponent.ɵfac = function BlogPostViewComponent_Factory(t) { return new (t || BlogPostViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.Title), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.Meta)); };
 BlogPostViewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BlogPostViewComponent, selectors: [["app-blog-post-view"]], decls: 2, vars: 1, consts: [[1, "is-flex", "is-justify-content-center", "px-5", "blog-container"], ["markdown", "", 1, "blog-wrapper", 3, "src"]], template: function BlogPostViewComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", 1);
@@ -275,7 +307,7 @@ BlogPostViewComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.post);
-    } }, directives: [ngx_markdown__WEBPACK_IMPORTED_MODULE_2__.MarkdownComponent], encapsulation: 2 });
+    } }, directives: [ngx_markdown__WEBPACK_IMPORTED_MODULE_3__.MarkdownComponent], encapsulation: 2 });
 
 
 /***/ }),

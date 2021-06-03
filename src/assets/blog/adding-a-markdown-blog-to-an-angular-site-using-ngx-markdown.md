@@ -3,7 +3,15 @@
 Brendan Travis • Thursday, June 3, 2021
 
 ---
-For this to work, we are going to use a small library built for Angular that transforms markdown into HTML: [ngx-markdown](https://www.npmjs.com/package/ngx-markdown).
+Adding a blog to your site is a great way to share experiences quickly and in a
+format that most people are already used to. Building a blog through Angular
+can be overly complex if all you are wanting to do is post regular content.
+That is where markdown comes in. Using markdown to write your articles means
+that your can focus on the content of the blog and not have to worry about
+building a new page for your articles every time you write one.
+
+For this to work, we are going to use a small library built for Angular that transforms
+markdown into HTML: [ngx-markdown](https://www.npmjs.com/package/ngx-markdown).
 
 ## Add the package
 The first step is to add the library to your project.
