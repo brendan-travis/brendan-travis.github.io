@@ -1764,9 +1764,6 @@ hr {
   background-color: #b5b5b5;
   height: 1px;
 }
-body {
-  height: 100vh;
-}
 ::-webkit-scrollbar {
   width: 13px;
   height: 13px;
@@ -1811,6 +1808,47 @@ body {
 .pl-auto {
   margin-left: auto;
 }
+.width-100 {
+  width: 100%;
+}
+.blog-wrapper {
+  max-width: 700px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: 64px;
+  margin-right: 64px;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .blog-wrapper {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+.blog-wrapper .pre-filepath {
+  padding: 8px;
+  margin-bottom: 0;
+  background-color: #121212;
+  border-radius: 5px 5px 0 0;
+  color: #b5b5b5;
+  text-align: right;
+  color: #48c774;
+  font-size: 0.875em;
+  font-family: monospace;
+}
+.blog-wrapper pre {
+  margin-bottom: 12px;
+  background-color: #121212;
+  border-radius: 0 0 5px 5px;
+  color: #b5b5b5;
+}
+.blog-wrapper h2 {
+  margin-top: 24px;
+}
+.blog-list-image {
+  max-width: 200px;
+  max-height: 128px;
+}
 button mat-icon {
   margin-right: 2px;
   margin-bottom: 3px;
@@ -1848,7 +1886,6 @@ button mat-icon {
 .side-nav-container .side-nav {
   border-right: 1px solid #dbdbdb;
   height: 100%;
-  width: 192px;
 }
 .side-nav-container .side-nav button {
   padding-top: 8px;
@@ -1856,10 +1893,27 @@ button mat-icon {
   border-radius: 0;
   text-align: left;
 }
+.side-nav-container .child-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+mat-sidenav {
+  width: 192px;
+}
+.mat-drawer-container {
+  overflow: unset !important;
+}
+.mat-drawer-content {
+  overflow: unset !important;
+}
 .scroll-to-top {
   position: fixed;
   bottom: 16px;
   right: 16px;
+}
+.blog-container {
+  background-color: whitesmoke;
 }
 .project-container {
   background-color: whitesmoke;

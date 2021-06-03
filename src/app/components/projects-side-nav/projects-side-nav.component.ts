@@ -5,22 +5,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
   templateUrl: './projects-side-nav.component.html'
 })
 export class ProjectsSideNavComponent implements OnInit {
-  public innerWidth: number = 0;
-  public opened: boolean = false;
-  public showScrollToTop: boolean = false;
-
-  public get mode() {
-    if (this.innerWidth >= 768) {
-      this.opened = true;
-      return "side"
-    } else {
-      this.opened = false;
-      return "over"
-    }
-  }
+  showScrollToTop: boolean = false;
 
   @HostListener('window:scroll', [])
-  public updateScrollToTopVisibility() {
+  updateScrollToTopVisibility() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       this.showScrollToTop = true;
     } else {
@@ -28,17 +16,12 @@ export class ProjectsSideNavComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize', [])
-  public onResize() {
-    this.innerWidth = window.innerWidth;
-  }
-
-  public scrollToTop() {
+  scrollToTop() {
     window.scrollTo({top: 0, behavior: 'smooth'});
+    document.body.scrollTop = 0;
   }
 
   ngOnInit(): void {
-    this.innerWidth = window.innerWidth;
     this.updateScrollToTopVisibility;
   }
 }

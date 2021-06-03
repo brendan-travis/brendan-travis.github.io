@@ -5,10 +5,10 @@
     brendan-travis.github.io
   </button>
 
-  <div class='is-flex-grow-1 is-flex is-flex-wrap-wrap'>
-    <!-- <button mat-button routerLink='/blog' class="ml-2">
+  <div class='is-flex-grow-1 is-flex is-flex-wrap-wrap is-hidden-touch'>
+    <button mat-button routerLink='/blog' class="ml-2 my-1">
       Blog
-    </button> -->
+    </button>
 
     <button mat-button routerLink='/projects' class="ml-2 my-1">
       Projects
@@ -33,6 +33,12 @@
         </button>
       </a>
     </div>
+  </div>
+
+  <div class='is-hidden-desktop ml-auto'>
+    <button mat-button (click)="toggleMobileNav()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
 
 </mat-toolbar>

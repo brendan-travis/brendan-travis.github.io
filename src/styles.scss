@@ -16,10 +16,12 @@
 @import
   'styles/4-layout/height',
   'styles/4-layout/margins',
-  'styles/4-layout/padding';
+  'styles/4-layout/padding',
+  'styles/4-layout/width';
 
 // 5. Components
 @import
+  'styles/5-components/blog',
   'styles/5-components/buttons',
   'styles/5-components/hero',
   'styles/5-components/navbar',
@@ -28,6 +30,7 @@
 
 // 6. Page-specific styles
 @import
+  'styles/6-pages/blog',
   'styles/6-pages/projects';
 
 // 7. Themes

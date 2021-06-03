@@ -8,7 +8,6 @@
   .side-nav {
     border-right: 1px solid $grey-lighter;
     height: 100%;
-    width: 192px;
 
     button {
       padding-top: 8px;
@@ -17,4 +16,22 @@
       text-align: left;
     }
   }
+
+  .child-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+}
+
+mat-sidenav {
+  width: 192px;
+}
+
+.mat-drawer-container {
+  overflow: unset !important;
+}
+
+.mat-drawer-content {
+  overflow: unset !important;
 }

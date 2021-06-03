@@ -1,0 +1,25 @@
+<div class='side-nav is-flex is-flex-direction-column'>
+
+  <button mat-button (click)='toggleProjects()' has-children>Projects</button>
+
+  <div #projects class='child-container'>
+    <button mat-button routerLink='projects/github-io' (click)='toggleProjects()' class='width-100'>- GitHub.io</button>
+  </div>
+
+  <button mat-button routerLink='blog'>Blog</button>
+
+  <div class='mt-auto is-flex is-justify-content-center'>
+    <a href='https://www.linkedin.com/in/brendan-travis-029b89166/'>
+      <button mat-button>
+        <mat-icon svgIcon='linkedin'></mat-icon>
+      </button>
+    </a>
+
+    <a href='https://github.com/brendan-travis'>
+      <button mat-button>
+        <mat-icon svgIcon='github'></mat-icon>
+      </button>
+    </a>
+  </div>
+
+</div>

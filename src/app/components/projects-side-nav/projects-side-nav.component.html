@@ -1,12 +1,5 @@
-<div class='sub-navbar is-hidden-tablet'>
-  <button mat-button (click)='sidenav.toggle()' class='mx-1 my-1'>
-    <mat-icon>
-      menu
-    </mat-icon>
-  </button>
-</div>
-<mat-sidenav-container class='side-nav-container'>
-  <mat-sidenav #sidenav [mode]='mode' [(opened)]='opened'>
+<mat-sidenav-container class='side-nav-container height-100'>
+  <mat-sidenav #sidenav mode='side' opened='true' class='is-hidden-touch'>
     <div class='side-nav is-flex is-flex-direction-column'>
       <button mat-button routerLink='github-io'>GitHub.io</button>
     </div>

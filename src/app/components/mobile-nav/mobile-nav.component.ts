@@ -1,13 +1,6 @@
-import { Component } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
-import { MobileNavService } from 'src/app/services/mobile-nav-service';
-
-const B_ICON = `
-  <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-    <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M15,10.5V9A2,2 0 0,0 13,7H9V17H13A2,2 0 0,0 15,15V13.5C15,12.7 14.3,12 13.5,12C14.3,12 15,11.3 15,10.5M13,15H11V13H13V15M13,11H11V9H13V11Z" />
-  </svg>
-`;
+import { DomSanitizer } from '@angular/platform-browser';
 
 const GITHUB_ICON = `
   <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -22,20 +15,25 @@ const LINKED_IN_ICON = `
 `;
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html'
+  selector: 'app-mobile-nav',
+  templateUrl: './mobile-nav.component.html'
 })
-export class NavBarComponent {
-  constructor(
-    private iconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer,
-    private mobileNavService: MobileNavService) {
+export class MobileNavComponent {
+  @ViewChild('projects')
+  projects!: ElementRef;
+
+  constructor(private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer) {
       iconRegistry.addSvgIconLiteral('github', sanitizer.bypassSecurityTrustHtml(GITHUB_ICON));
-      iconRegistry.addSvgIconLiteral('b', sanitizer.bypassSecurityTrustHtml(B_ICON));
       iconRegistry.addSvgIconLiteral('linkedin', sanitizer.bypassSecurityTrustHtml(LINKED_IN_ICON));
   }
 
-  toggleMobileNav() {
-    this.mobileNavService.toggle();
+  toggleProjects() {
+    if (this.projects.nativeElement.style.maxHeight){
+      this.projects.nativeElement.style.maxHeight = null;
+    } else {
+      this.projects.nativeElement.style.maxHeight = this.projects.nativeElement.scrollHeight + "px";
+    }
   }
+
 }

@@ -17,6 +17,11 @@ import { HeroComponent } from './components/hero/hero.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProjectsSideNavComponent } from './components/projects-side-nav/projects-side-nav.component';
 import { GithubIoComponent } from './pages/projects/github-io/github-io.component';
+import { BlogPostViewComponent } from './components/blog-post-view/blog-post-view.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MobileNavService } from './services/mobile-nav-service';
+import { MobileNavComponent } from './components/mobile-nav/mobile-nav.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +32,9 @@ import { GithubIoComponent } from './pages/projects/github-io/github-io.componen
     HeroComponent,
     FooterComponent,
     ProjectsSideNavComponent,
-    GithubIoComponent
+    GithubIoComponent,
+    BlogPostViewComponent,
+    MobileNavComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +43,11 @@ import { GithubIoComponent } from './pages/projects/github-io/github-io.componen
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
-  providers: [],
+  providers: [MobileNavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
