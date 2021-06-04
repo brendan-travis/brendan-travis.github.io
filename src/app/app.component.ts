@@ -1,19 +1,21 @@
 import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { MobileNavService } from './services/mobile-nav-service';
+import { IconService } from './shared/icon-service';
+import { MobileNavService } from './shared/mobile-nav/mobile-nav-service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  public innerWidth: number = 0;
-  public opened: boolean = false;
+  public innerWidth = 0;
+  public opened = false;
 
   @ViewChild('mobileNav')
   mobileNav!: MatSidenav;
 
-  constructor(private mobileNavService: MobileNavService) {
+  constructor(private mobileNavService: MobileNavService, iconService: IconService) {
+    iconService.registerIcons();
   }
 
   ngOnInit(): void {
@@ -25,13 +27,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   @HostListener('window:resize', [])
-  onResize() {
+  onResize(): void {
     if (window.innerWidth >= 768) {
       this.opened = false;
-    };
+    }
   }
 
-  onClick(event: Event) {
+  onClick(event: Event): void {
     if (this.opened &&
       (event.target as HTMLElement).getAttribute('has-children') === null &&
       (event.target as HTMLElement).parentElement?.getAttribute('has-children') === null) {
