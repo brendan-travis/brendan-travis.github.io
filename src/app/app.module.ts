@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -29,6 +30,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     SharedModule,
     HomeModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [{
+    provide: LocationStrategy, useClass: HashLocationStrategy
+  }]
 })
 export class AppModule { }
