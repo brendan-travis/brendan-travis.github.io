@@ -11,7 +11,7 @@
           testing frontend systems.
         </p>
         <p>
-          Built with a fully orchestrate container environment with Kubernetes
+          Built with a fully orchestrated container environment with Kubernetes
           and numerous build scripts to provide a local interpretation of a CD
           pipeline.
         </p>

@@ -31,6 +31,15 @@
       <div class="point-container">
         <div class="point"></div>
         <div>
+          <h3>Calrec <span>Audio</span> Ltd</h3>
+          <p>2014-2015</p>
+          <p>QA Test Engineer</p>
+          <p>Placement Year</p>
+        </div>
+      </div>
+      <div class="point-container">
+        <div class="point"></div>
+        <div>
           <h3>University of <span>Huddersfield</span></h3>
           <p>2012-2016</p>
           <p>Music Technology & Audio Systems</p>
@@ -70,7 +79,7 @@ export default defineComponent({});
   }
 
   .line {
-    height: 540px;
+    height: 700px;
     width: 2px;
     margin-left: 9px;
     background: $col-base-3;

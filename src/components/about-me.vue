@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h2>About Me</h2>
+    <h2>About //</h2>
     <p>
       Brendan is a full stack developer that cut his teeth on C# and TypeScript
       development, working with cloud technologies, .NET APIs, and frontend
