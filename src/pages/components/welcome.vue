@@ -7,33 +7,33 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 
-export default defineComponent({
-  computed: {
-    line1: () => {
-      const hour = new Date().getHours();
-      if (hour >= 3 && hour < 12) {
-        return "Good morning.";
-      } else if (hour >= 12 && hour < 18) {
-        return "Good afternoon.";
-      } else {
-        return "Good evening.";
-      }
-    },
-    line2: () => "It's nice to meet you.",
-  },
-  mounted() {
-    setTimeout(() => {
-      this.$el.parentNode.removeChild(this.$el);
-    }, 6000);
-  },
+const line1 = computed(() => {
+  const hour = new Date().getHours();
+
+  if (hour >= 3 && hour < 12) {
+    return "Good morning.";
+  } else if (hour >= 12 && hour < 18) {
+    return "Good afternoon.";
+  } else {
+    return "Good evening.";
+  }
 });
+
+const line2 = "Pleased to meet you.";
+
+// eslint-disable-next-line no-undef
+const emit = defineEmits(["onTimeout"]);
+
+setTimeout(() => {
+  emit("onTimeout");
+}, 6000);
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables";
+@import "../../styles/variables";
 
 .welcome-message-container {
   position: fixed;

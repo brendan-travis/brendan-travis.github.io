@@ -1,4 +1,5 @@
 <template>
+  <welcome v-if="showWelcome" @onTimeout="() => removeWelcome()" />
   <div class="top-container">
     <img class="image" src="../../public/assets/profile.jpg" />
     <h1>Brendan Travis</h1>
@@ -6,28 +7,27 @@
   <div class="page-container">
     <h2>Full-Stack Developer</h2>
     <p class="scroll-indicator">scroll down →</p>
-    <about-me></about-me>
-    <work-timeline></work-timeline>
-    <project-list></project-list>
-    <siteFooter></siteFooter>
+    <about-me />
+    <work-timeline />
+    <project-list />
+    <siteFooter />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import aboutMe from "@/components/about-me.vue";
-import workTimeline from "@/components/work-timeline.vue";
-import projectList from "@/components/project-list.vue";
-import siteFooter from "@/components/site-footer.vue";
+<script setup lang="ts">
+import { ref } from "vue";
 
-export default defineComponent({
-  components: {
-    aboutMe,
-    workTimeline,
-    projectList,
-    siteFooter,
-  },
-});
+import aboutMe from "@/pages/components/about-me.vue";
+import workTimeline from "@/pages/components/work-timeline.vue";
+import projectList from "@/pages/components/project-list.vue";
+import siteFooter from "@/pages/components/site-footer.vue";
+import welcome from "@/pages/components/welcome.vue";
+
+const showWelcome = ref(true);
+
+const removeWelcome = () => {
+  showWelcome.value = false;
+};
 </script>
 
 <style lang="scss" scoped>

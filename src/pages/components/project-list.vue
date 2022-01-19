@@ -2,7 +2,7 @@
   <div class="container">
     <h2>Personal Projects</h2>
     <div class="card">
-      <img class="image" src="../../public/assets/api_playground.png" />
+      <img class="image" src="../../../public/assets/api_playground.png" />
       <div class="content">
         <h3>API Playground</h3>
         <p>
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="card">
-      <img class="image" src="../../public/assets/ds3_quest_checklist.jpg" />
+      <img class="image" src="../../../public/assets/ds3_quest_checklist.jpg" />
       <div class="content">
         <h3>Dark Souls III Quest Checklist</h3>
         <p>
@@ -46,7 +46,7 @@
     <div class="card">
       <img
         class="image"
-        src="../../public/assets/rpg_maker_mv_realtime_clock.jpg"
+        src="../../../public/assets/rpg_maker_mv_realtime_clock.jpg"
       />
       <div class="content">
         <h3>RPG Maker MV Plugin: Real-Time Clock</h3>
@@ -73,14 +73,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({});
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-@import "../styles/variables";
+@import "../../styles/variables";
 
 .container {
   padding: 32px 20% 64px;
