@@ -6,8 +6,16 @@
       <div class="point-container">
         <div class="point"></div>
         <div>
+          <h3><span>X-Lab</span> Systems</h3>
+          <p>May 2022 - Present</p>
+          <p>Software Engineer</p>
+        </div>
+      </div>
+      <div class="point-container">
+        <div class="point"></div>
+        <div>
           <h3>Answer <span>Digital</span></h3>
-          <p>Oct 2021 - Present</p>
+          <p>Oct 2021 - May 2022</p>
           <p>Senior Developer</p>
           <br />
           <p>Jan 2020 - Oct 2021</p>
