@@ -1,6 +1,6 @@
 <template>
   <div class="footer-container">
-    <p>2021 Brendan Travis</p>
+    <p>2023 Brendan Travis</p>
     <a href="https://github.com/brendan-travis">GitHub</a>
     <a href="https://www.linkedin.com/in/brendan-travis-029b89166/">LinkedIn</a>
   </div>

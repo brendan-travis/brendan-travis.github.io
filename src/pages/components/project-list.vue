@@ -2,26 +2,6 @@
   <div class="container">
     <h2>Personal Projects</h2>
     <div class="card">
-      <img class="image" src="../../../public/assets/api_playground.png" />
-      <div class="content">
-        <h3>API Playground</h3>
-        <p>
-          A .NET API built for testing purposes with the aim to provide a fully
-          functional API to mock backend functionality when developing or
-          testing frontend systems.
-        </p>
-        <p>
-          Built with a fully orchestrated container environment with Kubernetes
-          and numerous build scripts to provide a local interpretation of a CD
-          pipeline.
-        </p>
-        <a href="https://github.com/brendan-travis/api-playground">
-          Click to view the source code.
-        </a>
-        <p class="tags">.NET, Web API, Kubernetes, Docker</p>
-      </div>
-    </div>
-    <div class="card">
       <img class="image" src="../../../public/assets/ds3_quest_checklist.jpg" />
       <div class="content">
         <h3>Dark Souls III Quest Checklist</h3>

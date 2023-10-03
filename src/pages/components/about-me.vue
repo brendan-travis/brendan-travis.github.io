@@ -15,8 +15,8 @@
       further his learning.
     </p>
     <p class="tags">
-      Azure, AWS, Kubernetes, Docker, C#, .NET (Framework, Core), TypeScript,
-      JavaScript, HTML, CSS/SCSS, Angular, Vue
+      Angular, Aurelia, AWS, Azure, C#, CSS/SCSS, Docker, HTML, Java,
+      JavaScript, Kubernetes, .NET, React, Terraform, TypeScript, Vue
     </p>
   </div>
 </template>

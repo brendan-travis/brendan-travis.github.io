@@ -1,11 +1,10 @@
 <template>
-  <welcome v-if="showWelcome" @onTimeout="() => removeWelcome()" />
   <div class="top-container">
     <img class="image" src="../../public/assets/profile.jpg" />
     <h1>Brendan Travis</h1>
   </div>
   <div class="page-container">
-    <h2>Full-Stack Developer</h2>
+    <h2>Full-Stack Software Engineer</h2>
     <p class="scroll-indicator">scroll down →</p>
     <about-me />
     <work-timeline />
@@ -21,13 +20,6 @@ import aboutMe from "@/pages/components/about-me.vue";
 import workTimeline from "@/pages/components/work-timeline.vue";
 import projectList from "@/pages/components/project-list.vue";
 import siteFooter from "@/pages/components/site-footer.vue";
-import welcome from "@/pages/components/welcome.vue";
-
-const showWelcome = ref(true);
-
-const removeWelcome = () => {
-  showWelcome.value = false;
-};
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +53,7 @@ const removeWelcome = () => {
     right: 20%;
     border-radius: 150px;
     top: calc(50vh - 150px);
+    object-fit: cover;
 
     @media (max-width: $break-mobile-max) {
       width: 200px;

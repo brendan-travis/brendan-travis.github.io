@@ -18,7 +18,7 @@ View the deployed version here: https://brendan-travis.github.io/
 
 ## Git hooks
 
-###Pre-commit:
+### Pre-commit:
 Runs the linter to clean the codebase before running the deployment activities and adding them to the commit.
 ```
 npm run lint
@@ -26,7 +26,7 @@ npm run deploy
 git add docs/
 ```
 
-###Pre-push:
+### Pre-push:
 Runs the entire testing suite before pushing.
 ```
 npm run test
